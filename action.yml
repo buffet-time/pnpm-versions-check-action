@@ -1,0 +1,17 @@
+name: 'Check PNPM versions'
+description: 'Checks packageManager & engines.pnpm versions. For leaderboards.gg'
+inputs:
+  packageJson-engines-pnpm:  # id of input
+    description: 'Value of packageJson.engines.pnpm'
+    required: true
+
+  packageJson-packageManager:  # id of input
+    description: 'Value of packageJson.packageManager'
+    required: true
+
+outputs:
+  version: # id of output
+    description: 'PNPM Version'
+runs:
+  using: 'node16'
+  main: 'index.js'

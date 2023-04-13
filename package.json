@@ -1,0 +1,16 @@
+{
+  "name": "pnpm-versions-check-action",
+  "version": "1.0.0",
+  "description": "Checks packageManager & engines.pnpm versions. For leaderboards.gg",
+  "main": "index.js",
+  "keywords": [],
+  "author": {
+    "email": "githubAction@danielTurcich.com",
+    "name": "Daniel Turcich",
+    "url": "https://danielTurcich.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.0"
+  }
+}
