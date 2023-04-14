@@ -1,4 +1,5 @@
 const core = require("@actions/core");
+const semver = require("semver");
 
 try {
   // packageJson.engines.pnpm
@@ -9,7 +10,7 @@ try {
     .getInput("packageJson-packageManager")
     .slice(5);
 
-  if (massagedPnpmEngine === massagedPackageManager) {
+  if (semver.satisfies(massagedPackageManager, massagedPnpmEngine)) {
     console.log(`PNPM version check passed! Returning ${massagedPnpmEngine}`);
     core.setOutput("version", massagedPnpmEngine);
   } else {
