@@ -3,12 +3,12 @@ const semver = require("semver");
 
 try {
   // packageJson.engines.pnpm
-  const massagedPnpmEngine = core.getInput("packageJson-engines-pnpm").slice(2);
+  const massagedPnpmEngine = core.getInput("packageJson-engines-pnpm");
 
   // packageJson.packageManager
   const massagedPackageManager = core
     .getInput("packageJson-packageManager")
-    .slice(5);
+    .replace(/^(?:\w+@)?(.+)$/, '$1');
 
   if (semver.satisfies(massagedPackageManager, massagedPnpmEngine)) {
     console.log(`PNPM version check passed! Returning ${massagedPnpmEngine}`);
